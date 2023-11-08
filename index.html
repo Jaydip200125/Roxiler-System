@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions Dashboard</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+label, select, input, button {
+    margin: 10px;
+}
+
+#statisticsBox, #barChart {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#barChart {
+    height: 300px;
+}
+
+/* Style for buttons */
+button {
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for input fields */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for select dropdown */
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for statistics box */
+#statisticsBox p {
+    margin: 10px 0;
+}
+
+/* Style for total amount in statistics box */
+#statisticsBox span {
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Transactions Dashboard</h1>
+
+    <label for="monthSelect">Select Month:</label>
+    <select id="monthSelect">
+        <option value="Jan">January</option>
+        <option value="Feb">February</option>
+        <option value="Mar" selected>March</option>
+        <option value="Apr">April</option>
+        <option value="May">May</option>
+        <option value="Jun">June</option>
+        <option value="Jul">July</option>
+        <option value="Aug">August</option>
+        <option value="Sep">September</option>
+        <option value="Oct">October</option>
+        <option value="Nov">November</option>
+        <option value="Dec">December</option>
+    </select>
+
+    <input type="text" id="searchBox" placeholder="Search Transaction">
+
+    <button id="nextBtn">Next</button>
+    <button id="prevBtn">Previous</button>
+
+    <div id="statisticsBox">
+        <p>Total Sales: <span id="totalSales">Loading...</span></p>
+        <p>Total Sold Items: <span id="totalSoldItems">Loading...</span></p>
+        <p>Total Not Sold Items: <span id="totalNotSoldItems">Loading...</span></p>
+    </div>
+
+    <div id="barChart"></div>
+
+    <table id="transactionsTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Transaction data will be inserted here using JavaScript -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
